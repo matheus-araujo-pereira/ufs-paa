@@ -6,6 +6,7 @@ Estratégia usada para resolver a questão:
     - verificar se arr[meio] é o max, se nao for, verificamos em qual direcao continuar, direita arr[meio + 1] ajustando o inicio e esquerda arr[meio - 1] ajustando o fim.
 """
 
+
 def encontrar_maximo(arr):
 
     inicio = 0
@@ -15,10 +16,12 @@ def encontrar_maximo(arr):
 
         meio = (inicio + fim) // 2
 
-        if (meio == 0 or arr[meio] > arr[meio - 1]) and (meio == len(arr) - 1 or arr[meio] > arr[meio + 1]):
+        if (meio == 0 or arr[meio] > arr[meio - 1]) and (
+            meio == len(arr) - 1 or arr[meio] > arr[meio + 1]
+        ):
 
             return arr[meio]
-        
+
         elif meio < len(arr) - 1 and arr[meio] < arr[meio + 1]:
 
             inicio = meio + 1
@@ -26,8 +29,9 @@ def encontrar_maximo(arr):
         else:
 
             fim = meio - 1
-    
+
     return -1
+
 
 exemplo_01 = [10, 8, 3, 2, 1]
 exemplo_02 = [1, 4, 5, 7, 8, 9, 20]
